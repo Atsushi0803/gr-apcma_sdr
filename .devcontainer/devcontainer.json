@@ -1,0 +1,20 @@
+{
+    "name": "Gnuradio-3.10.2",
+    "dockerFile": "Dockerfile",
+    "extensions": [
+        "ms-vscode.cpptools",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "donjayamanne.githistory",
+        "esbenp.prettier-vscode"
+    ],
+    "settings": {
+        "terminal.integrated.profiles.linux": {
+            "bash": {
+                "path": "/bin/zsh"
+            }
+        },
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "editor.tabSize": 4
+    }
+}
