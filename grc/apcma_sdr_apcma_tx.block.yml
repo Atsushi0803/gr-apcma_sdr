@@ -1,47 +1,36 @@
 id: apcma_sdr_apcma_tx
-label: apcma_tx
-category: '[apcma_sdr]'
-
+label: apcma tx
+category: "[Apcma_sdr]"
 templates:
-  imports: from gnuradio import apcma_sdr
-  make: apcma_sdr.apcma_tx(${sf}, ${bw}, ${n_bit}, ${n_pulse}, ${start_var}, ${end_var})
-
-#  Make one 'parameters' list entry for every parameter you want settable from the GUI.
-#     Keys include:
-#     * id (makes the value accessible as keyname, e.g. in the make entry)
-#     * label (label shown in the GUI)
-#     * dtype (e.g. int, float, complex, byte, short, xxx_vector, ...)
-#     * default
+    imports: from gnuradio import apcma_sdr
+    make: apcma_sdr.apcma_tx(${sf}, ${bw}, ${n_bit}, ${n_pulse}, ${start_var}, ${end_var})
 parameters:
-- id: parametername_replace_me
-  label: FIX ME:
-  dtype: string
-  default: You need to fill in your grc/apcma_sdr_apcma_tx.block.yaml
-#- id: ...
-#  label: ...
-#  dtype: ...
-
-#  Make one 'inputs' list entry per input and one 'outputs' list entry per output.
-#  Keys include:
-#      * label (an identifier for the GUI)
-#      * domain (optional - stream or message. Default is stream)
-#      * dtype (e.g. int, float, complex, byte, short, xxx_vector, ...)
-#      * vlen (optional - data stream vector length. Default is 1)
-#      * optional (optional - set to 1 for optional inputs. Default is 0)
-inputs:
-#- label: ...
-#  domain: ...
-#  dtype: ...
-#  vlen: ...
-#  optional: ...
-
+    - id: sf
+      label: Sf
+      default: " 7"
+      dtype: int
+    - id: bw
+      label: Bw
+      default: " 250000"
+      dtype: int
+    - id: n_bit
+      label: N_bit
+      default: " 4"
+      dtype: int
+    - id: n_pulse
+      label: N_pulse
+      default: " 4"
+      dtype: int
+    - id: start_var
+      label: Start_var
+      default: " 1"
+      dtype: int
+    - id: end_var
+      label: End_var
+      default: " 8"
+      dtype: int
 outputs:
-#- label: ...
-#  domain: ...
-#  dtype: ...
-#  vlen: ...
-#  optional: ...
-
-#  'file_format' specifies the version of the GRC yml format used in the file
-#  and should usually not be changed.
+    - label: out
+      domain: stream
+      dtype: complex
 file_format: 1
